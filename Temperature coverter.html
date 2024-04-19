@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<style>
+    *{
+        background-color: antiquewhite;
+        padding: 0;
+        margin: 0;
+    }
+    h1{
+        text-align: center;
+        color: brown;
+        font-size: 70px;
+    }
+    .container{
+        display: grid;
+        inline-size: auto;
+        padding: 20px 50px;
+        text-align: center;
+        width: 250px;
+    }
+    #div1,#div2{
+        background-color: antiquewhite;
+        text-align: center;
+        width: 200px;
+        padding-left: 600px;
+    }
+    label{
+        font-size: 35px;
+        color: rgb(76, 7, 119);
+        font-weight: bolder;
+    }
+    
+    input{
+        background: #000;
+        border: solid white;
+        color: whitesmoke;
+        font-weight: bold;
+        height: 25px;
+        
+    }
+
+</style>
+<body>
+    <h1> Temperature Coverter</h1>
+    <hr>
+    <div class="container">
+        <div id="div1">
+            <label for="cel">Celcius</label>
+            <input type="number" name="" id="cel" value="0">
+        </div><br>
+        <div id="div2">
+            <label for="fah">Fahrenheit</label>
+            <input type="number" name="" id="fah" value="32">
+        </div>
+    </div>
+
+    
+</body>
+<script>
+    let cel = document.getElementById("cel")
+    let fah = document.getElementById("fah")
+    cel.addEventListener("input",function(){
+        let x = cel.value
+        let formula = (x * 9/5) + 32
+        fah.value = formula
+    })
+    fah.addEventListener("input",function(){
+        let y = fah.value
+        let formula = (y - 32) * 5/9 
+        cel.value = formula;
+    })
+</script>
+</html>
